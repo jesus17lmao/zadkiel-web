@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
@@ -410,25 +410,6 @@
       box-shadow: 0 0 12px rgba(57, 255, 20, 0.5);
     }
 
-    .copy-mini-btn {
-      margin-top: 8px;
-      background: #1b1530;
-      color: var(--neon-green);
-      border: 1px solid rgba(57, 255, 20, 0.45);
-      border-radius: 999px;
-      padding: 5px 12px;
-      font-family: inherit;
-      font-size: 0.75rem;
-      font-weight: 700;
-      cursor: pointer;
-      transition: 0.15s ease;
-    }
-
-    .copy-mini-btn:hover {
-      background: #271e45;
-      box-shadow: 0 0 10px rgba(57, 255, 20, 0.35);
-    }
-
     .custom-box {
       margin-top: 18px;
       background: var(--panel-soft);
@@ -441,6 +422,76 @@
     .custom-box:hover {
       border-color: var(--neon-green);
       box-shadow: 0 0 15px rgba(57, 255, 20, 0.3);
+    }
+
+    /* Tarjeta especial Franela Anime ZaDkiel */
+    .featured-drop {
+      margin-top: 18px;
+      background: var(--panel-soft);
+      border: 2px solid rgba(168, 85, 247, 0.42);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 16px;
+      align-items: center;
+      transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    .featured-drop:hover {
+      border-color: var(--neon-green);
+      box-shadow: 0 0 18px rgba(57, 255, 20, 0.35);
+    }
+
+    @media (max-width: 680px) {
+      .featured-drop {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .featured-img-box {
+      background: #100d1b;
+      border-radius: var(--radius-sm);
+      padding: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 210px;
+    }
+
+    .featured-img-box img {
+      max-width: 100%;
+      max-height: 230px;
+      object-fit: contain;
+      border-radius: 12px;
+    }
+
+    .variant-pills {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .var-btn {
+      background: #130f22;
+      color: var(--white);
+      border: 1px solid rgba(168, 85, 247, 0.45);
+      border-radius: 999px;
+      padding: 6px 13px;
+      font-family: inherit;
+      font-size: 0.78rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.15s ease;
+    }
+
+    .var-btn:hover,
+    .var-btn.active {
+      border-color: var(--neon-green);
+      color: var(--neon-green);
+      box-shadow: 0 0 10px rgba(57, 255, 20, 0.35);
     }
 
     .form-row {
@@ -807,13 +858,50 @@
       </div>
     </section>
 
-    <section class="section-panel">
+    <section class="section-panel" id="seccion-estilo">
       <div class="section-header">
         <h2 class="section-title" id="catalogTitle">Catálogo — Todo</h2>
         <span style="font-size:0.8rem; color:var(--muted);">Toca o pasa el cursor para resaltar en verde neón</span>
       </div>
 
       <div class="products-grid" id="productsGrid"></div>
+
+      <!-- Franela Anime ZaDkiel con variantes Blanca, Negra y Morado Neón -->
+      <div class="featured-drop" id="elije-tu-estilo">
+        <div class="featured-img-box">
+          <img
+            id="franelaAnimeImg"
+            src="img/franela-anime-morada.jpg"
+            alt="Franela Oversize ZaDkiel Edición Anime"
+          />
+        </div>
+        <div>
+          <span class="cat-badge">Elige tu estilo • Drop Anime</span>
+          <h3 class="section-title" style="font-size:1.5rem; margin-top:4px;">
+            Franela Oversize ZaDkiel — ザドキエル
+          </h3>
+          <p class="prod-meta" style="margin-top:4px;">
+            Frente con emblema + katakana y espalda con símbolo geométrico y caracteres. Elige tu variante:
+          </p>
+
+          <div class="variant-pills">
+            <button type="button" class="var-btn" data-img="img/franela-anime-blanca.jpg" data-color="Blanca">
+              Blanca
+            </button>
+            <button type="button" class="var-btn" data-img="img/franela-anime-negra.jpg" data-color="Negra">
+              Negra
+            </button>
+            <button type="button" class="var-btn active" data-img="img/franela-anime-morada.jpg" data-color="Morado Neón">
+              Morado Neón
+            </button>
+          </div>
+
+          <div class="prod-bottom" style="margin-top:14px;">
+            <span class="prod-price">$15.00</span>
+            <button type="button" class="add-btn" id="addAnimeDropBtn">+ Agregar al pedido</button>
+          </div>
+        </div>
+      </div>
 
       <div class="custom-box">
         <h3 class="section-title" style="font-size:1.45rem;">Personaliza tu Camisa — Elige tu estilo</h3>
@@ -841,18 +929,7 @@
         <button type="button" class="add-btn" id="addCustomShirtBtn" style="margin-top:12px; padding:8px 16px;">
           + Agregar Camisa Personalizada ($12)
         </button>
-      </div<section id="elije-tu-estilo">
-  <h2>elije tu estilo</h2>
-
-  <div class="contenedor-de-productos">
-    <!-- Aquí van tus otras tarjetas de ropa si ya tienes alguna -->
-
-    <!-- PEGA AQUÍ el bimg/franela-anime-negra.jpgloque de la franela (blanca, negra o morado neón) -->
-    <div class="zad-card" data-product="Franela Oversize ZaDkiel Anime">
-      ...
-    </div>
-  </div>
-</section>>
+      </div>
     </section>
   </div>
 
@@ -922,7 +999,7 @@
       </div>
 
       <div style="margin-top:12px;">
-        <label style="font-size:0.8rem; color:var(--muted);">Método de pago (Globos flotantes — Solo Pago Móvil o Binance):</label>
+        <label style="font-size:0.8rem; color:var(--muted);">Método de pago (Solo Pago Móvil o Binance):</label>
         <div class="pay-options">
           <button type="button" class="pay-balloon active" id="pay-pm" data-pay="Pago Móvil">
             <span class="pay-logo-badge">
@@ -994,383 +1071,275 @@
 
   <script>
     const PAYMENT_CONFIG = {
+      whatsappPhone: '584120000000', // Cambia por tu número real
       pagoMovil: {
         banco: '',
         telefono: '',
         cedula: ''
       },
       binance: {
-        idOrMail: ''
+        payId: ''
       }
     };
 
-    const phrasesByCategory = {
-      estilo: [
-        "Ese te quedaría súper cool.",
-        "Ese corte oversize destaca en cualquier calle de Maturín.",
-        "Con ese estilo vas a llamar la atención sin esfuerzo."
-      ],
-      hogar: [
-        "Queda perfecto con tu cocina.",
-        "Esto se vería hermoso en tu mesa.",
-        "Un detalle que levanta el estilo de tu hogar al instante."
-      ],
-      dia: [
-        "El estéreo de este producto es sumamente placentero.",
-        "Con este tipo de audio querrás llevarlos contigo a toda hora.",
-        "Ideal para acompañar tu día entero sin enredos."
-      ],
-      general: [
-        "Paso a paso con ZaDkiel: todo fluido y sin complicaciones.",
-        "Toca cualquier camisa, artículo de audio o de hogar para ver qué digo."
-      ]
-    };
-
-    const phraseIndexMap = { estilo: 0, hogar: 0, dia: 0, general: 0 };
-    let lastCategoryContext = 'general';
-
-    const products = [
-      { id: 1, cat: 'dia', name: 'Audífonos TWS Pro', meta: 'Bluetooth • Estuche carga', price: 14, icon: '🎧', soon: false },
-      { id: 2, cat: 'dia', name: 'Mini Corneta Bass', meta: 'Portátil • RGB / BT', price: 16, icon: '🔊', soon: false },
-      { id: 3, cat: 'estilo', name: 'Camisa Oversize Anime', meta: 'Algodón • Estampado DTF', price: 13, icon: '👕', soon: false },
-      { id: 4, cat: 'estilo', name: 'Camisa Street ZaDkiel', meta: 'Corte boxy • Negro/Morado', price: 12, icon: '🖤', soon: false },
-      { id: 5, cat: 'hogar', name: 'Vajilla de Vidrio 12 pzas', meta: 'Hogar • Resistente', price: 24, icon: '🍽️', soon: false },
-      { id: 6, cat: 'hogar', name: 'Tazas, Platos y Vasos Custom', meta: 'Próximamente en Hogar y más', price: 0, icon: '☕', soon: true }
+    const PRODUCTS = [
+      { id: 1, cat: 'dia', title: 'Audífonos Bluetooth TWS', meta: 'Estuche de carga • Uso diario', price: 14, icon: '🎧' },
+      { id: 2, cat: 'dia', title: 'Corneta Portátil Mini', meta: 'Conexión inalámbrica • Compacta', price: 16, icon: '🔊' },
+      { id: 3, cat: 'estilo', title: 'Camisa Oversize Negra Urbana', meta: 'Algodón • Corte amplio', price: 12, icon: '👕' },
+      { id: 4, cat: 'hogar', title: 'Set Vajilla de Vidrio', meta: 'Hogar • Presentación limpia', price: 18, icon: '🥃' },
+      { id: 5, cat: 'hogar', title: 'Tazas Personalizadas', meta: 'Próximamente en ZaDkiel', price: null, icon: '☕', soon: true },
+      { id: 6, cat: 'hogar', title: 'Platos y Vasos Personalizados', meta: 'Próximamente en ZaDkiel', price: null, icon: '🍽️', soon: true }
     ];
 
-    let activeCat = 'all';
+    let selectedCat = 'all';
     let cart = [];
-    let paymentMethod = 'Pago Móvil';
-    let currentCopyValue = '';
-    let currentCopyLabel = 'Datos pendientes por configurar';
-    let toastTimer = null;
+    let selectedPay = 'Pago Móvil';
+    let selectedAnimeVariant = {
+      color: 'Morado Neón',
+      img: 'img/franela-anime-morada.jpg'
+    };
+
+    const productsGrid = document.getElementById('productsGrid');
+    const catalogTitle = document.getElementById('catalogTitle');
+    const cartModal = document.getElementById('cartModal');
+    const cartItemsEl = document.getElementById('cartItems');
+    const cartCountEl = document.getElementById('cartCount');
+    const cartTotalEl = document.getElementById('cartTotal');
+    const cartTotalBsEl = document.getElementById('cartTotalBs');
+    const payDetailsEl = document.getElementById('payDetails');
+    const ragoStage = document.getElementById('ragoStage');
+    const buddyQuote = document.getElementById('buddyQuote');
+    const toastEl = document.getElementById('toast');
 
     function showToast(msg) {
-      const t = document.getElementById('toast');
-      t.textContent = msg;
-      t.style.display = 'block';
-      clearTimeout(toastTimer);
-      toastTimer = setTimeout(() => {
-        t.style.display = 'none';
-      }, 2300);
+      toastEl.textContent = msg;
+      toastEl.style.display = 'block';
+      clearTimeout(window.__toastTimer);
+      window.__toastTimer = setTimeout(() => {
+        toastEl.style.display = 'none';
+      }, 2400);
     }
 
-    function sayPhrase(cat) {
-      const key = Object.prototype.hasOwnProperty.call(phrasesByCategory, cat) ? cat : 'general';
-      lastCategoryContext = key;
-      const list = phrasesByCategory[key];
-      const idx = phraseIndexMap[key] % list.length;
-      phraseIndexMap[key] = idx + 1;
-      document.getElementById('buddyQuote').textContent = list[idx];
-    }
-
-    function reactToCategory(cat) {
-      if (lastCategoryContext !== cat) {
-        sayPhrase(cat);
-      }
-    }
-
-    function selectCategory(cat) {
-      activeCat = cat;
-      document.querySelectorAll('.pill-btn').forEach((btn) => {
-        btn.classList.toggle('active', btn.dataset.cat === cat);
-      });
-
-      document.querySelectorAll('.cat-card').forEach((card) => {
-        card.classList.toggle('selected', cat !== 'all' && card.dataset.cat === cat);
-      });
-
-      if (cat !== 'all') {
-        sayPhrase(cat);
-      } else {
-        sayPhrase('general');
-      }
-
-      const titles = {
-        all: 'Catálogo — Todo',
-        dia: 'Artículos para el día a día',
-        estilo: 'Elige tu estilo — Camisas',
-        hogar: 'Hogar y más'
-      };
-      document.getElementById('catalogTitle').textContent = titles[cat] || 'Catálogo';
-      renderProducts();
+    function setBuddy(msg) {
+      buddyQuote.textContent = msg;
     }
 
     function renderProducts() {
-      const grid = document.getElementById('productsGrid');
-      const filtered = activeCat === 'all' ? products : products.filter((p) => p.cat === activeCat);
-      grid.innerHTML = '';
+      const titles = {
+        all: 'Catálogo — Todo',
+        dia: 'Catálogo — Artículos para el día a día',
+        estilo: 'Catálogo — Elige tu estilo',
+        hogar: 'Catálogo — Hogar y más'
+      };
+      catalogTitle.textContent = titles[selectedCat] || 'Catálogo — ZaDkiel';
 
-      filtered.forEach((p) => {
-        const card = document.createElement('div');
-        card.className = p.soon ? 'product-card coming-soon' : 'product-card';
-        card.addEventListener('mouseenter', () => reactToCategory(p.cat));
-        card.addEventListener('click', () => sayPhrase(p.cat));
+      const list = selectedCat === 'all' ? PRODUCTS : PRODUCTS.filter(p => p.cat === selectedCat);
+      productsGrid.innerHTML = list.map(p => `
+        <div class="product-card ${p.soon ? 'coming-soon' : ''}">
+          <div>
+            <div class="prod-thumb">${p.icon}</div>
+            <div class="prod-title" style="margin-top:8px;">${p.title}</div>
+            <div class="prod-meta">${p.meta}</div>
+          </div>
+          <div class="prod-bottom">
+            ${p.soon
+              ? `<span class="soon-chip">Pronto</span>`
+              : `<span class="prod-price">$${p.price.toFixed(2)}</span>
+                 <button type="button" class="add-btn" onclick="addToCart('${p.title.replace(/'/g, "\\'")}', ${p.price})">+ Agregar</button>`
+            }
+          </div>
+        </div>
+      `).join('');
+    }
 
-        const thumb = document.createElement('div');
-        thumb.className = 'prod-thumb';
-        thumb.textContent = p.icon;
+    function addToCart(name, price) {
+      const found = cart.find(item => item.name === name);
+      if (found) {
+        found.qty += 1;
+      } else {
+        cart.push({ name, price, qty: 1 });
+      }
+      updateCartUI();
+      showToast(`Agregado: ${name}`);
+      setBuddy(`Rago vio que sumaste "${name}". ¡Buen gusto para Maturín!`);
+    }
 
-        const info = document.createElement('div');
-        const title = document.createElement('div');
-        title.className = 'prod-title';
-        title.textContent = p.name;
-        const meta = document.createElement('div');
-        meta.className = 'prod-meta';
-        meta.textContent = p.meta;
-        info.appendChild(title);
-        info.appendChild(meta);
+    function changeQty(index, delta) {
+      if (!cart[index]) return;
+      cart[index].qty += delta;
+      if (cart[index].qty <= 0) cart.splice(index, 1);
+      updateCartUI();
+    }
 
-        const bottom = document.createElement('div');
-        bottom.className = 'prod-bottom';
+    function updateCartUI() {
+      const totalQty = cart.reduce((acc, item) => acc + item.qty, 0);
+      cartCountEl.textContent = totalQty;
 
-        if (p.soon) {
-          const chip = document.createElement('span');
-          chip.className = 'soon-chip';
-          chip.textContent = 'Próximamente';
+      if (cart.length === 0) {
+        cartItemsEl.innerHTML = `<p style="font-size:0.84rem; color:var(--muted);">Tu pedido está vacío. Agrega algún producto de ZaDkiel.</p>`;
+      } else {
+        cartItemsEl.innerHTML = cart.map((item, idx) => `
+          <div class="cart-item">
+            <div>
+              <strong>${item.name}</strong><br />
+              <span style="color:var(--muted); font-size:0.76rem;">$${(item.price * item.qty).toFixed(2)}</span>
+            </div>
+            <div style="display:flex; align-items:center; gap:6px;">
+              <button type="button" class="close-btn" style="padding:2px 8px;" onclick="changeQty(${idx}, -1)">-</button>
+              <span>${item.qty}</span>
+              <button type="button" class="close-btn" style="padding:2px 8px;" onclick="changeQty(${idx}, 1)">+</button>
+            </div>
+          </div>
+        `).join('');
+      }
 
-          const btn = document.createElement('button');
-          btn.type = 'button';
-          btn.className = 'add-btn';
-          btn.textContent = 'Avisar';
-          btn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            showToast('Pronto disponible en Hogar y más');
-          });
+      const subtotal = cart.reduce((acc, item) => acc + item.price * item.qty, 0);
+      const delivery = cart.length > 0 ? Number(document.getElementById('deliveryZone').value || 0) : 0;
+      const totalUsd = subtotal + delivery;
+      cartTotalEl.textContent = `$${totalUsd.toFixed(2)}`;
 
-          bottom.appendChild(chip);
-          bottom.appendChild(btn);
-        } else {
-          const price = document.createElement('span');
-          price.className = 'prod-price';
-          price.textContent = '$' + p.price;
+      const rate = parseFloat(document.getElementById('bsRate').value);
+      if (!isNaN(rate) && rate > 0 && totalUsd > 0) {
+        cartTotalBsEl.textContent = `Ref. aprox: Bs ${(totalUsd * rate).toFixed(2)}`;
+      } else {
+        cartTotalBsEl.textContent = '';
+      }
+    }
 
-          const btn = document.createElement('button');
-          btn.type = 'button';
-          btn.className = 'add-btn';
-          btn.textContent = '+ Pedir';
-          btn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            addToCart(p.name, p.price, p.cat);
-          });
+    function renderPayDetails() {
+      if (selectedPay === 'Pago Móvil') {
+        const pm = PAYMENT_CONFIG.pagoMovil;
+        payDetailsEl.innerHTML = `
+          <strong>Pago Móvil:</strong>
+          ${(pm.banco || pm.telefono || pm.cedula)
+            ? `Banco: ${pm.banco || '—'} • Tel: ${pm.telefono || '—'} • C.I.: ${pm.cedula || '—'}`
+            : `Coordina los datos de Pago Móvil al enviar tu pedido.`}
+        `;
+      } else {
+        const bn = PAYMENT_CONFIG.binance;
+        payDetailsEl.innerHTML = `
+          <strong>Binance Pay / USDT:</strong>
+          ${bn.payId ? `Pay ID: ${bn.payId}` : `Coordina el Pay ID de Binance al enviar tu pedido.`}
+        `;
+      }
+    }
 
-          bottom.appendChild(price);
-          bottom.appendChild(btn);
-        }
-
-        card.appendChild(thumb);
-        card.appendChild(info);
-        card.appendChild(bottom);
-        grid.appendChild(card);
+    // Variantes de la franela anime
+    document.querySelectorAll('.var-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.var-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        selectedAnimeVariant = {
+          color: btn.dataset.color,
+          img: btn.dataset.img
+        };
+        document.getElementById('franelaAnimeImg').src = selectedAnimeVariant.img;
+        setBuddy(`Variante ${selectedAnimeVariant.color} lista para tu drop anime.`);
       });
-    }
+    });
 
-    function addToCart(name, price, cat = 'general') {
-      cart.push({ name, price });
-      updateCartCount();
-      sayPhrase(cat);
-      showToast('Agregado: ' + name);
-    }
+    document.getElementById('addAnimeDropBtn').addEventListener('click', () => {
+      addToCart(`Franela Oversize ZaDkiel Anime (${selectedAnimeVariant.color})`, 15);
+    });
 
-    function addCustomShirt() {
+    document.querySelectorAll('[data-cat]').forEach(el => {
+      el.addEventListener('click', () => {
+        selectedCat = el.dataset.cat;
+        document.querySelectorAll('.pill-btn').forEach(b => b.classList.toggle('active', b.dataset.cat === selectedCat));
+        document.querySelectorAll('.cat-card').forEach(c => c.classList.toggle('selected', c.dataset.cat === selectedCat));
+        renderProducts();
+      });
+    });
+
+    document.getElementById('addCustomShirtBtn').addEventListener('click', () => {
       const fit = document.getElementById('shirtFit').value;
       const size = document.getElementById('shirtSize').value;
       const color = document.getElementById('shirtColor').value;
-      const idea = document.getElementById('shirtIdea').value.trim() || 'Diseño a acordar';
-      const label = `Camisa (${fit}, Talla ${size}, ${color}) - "${idea}"`;
-      addToCart(label, 12, 'estilo');
-      document.getElementById('shirtIdea').value = '';
-    }
+      const idea = document.getElementById('shirtIdea').value.trim() || 'Diseño ZaDkiel';
+      addToCart(`Camisa ${fit} (${size}, ${color}) — "${idea}"`, 12);
+    });
 
-    function updateCartCount() {
-      document.getElementById('cartCount').textContent = String(cart.length);
-    }
+    document.getElementById('openCartBtn').addEventListener('click', () => {
+      updateCartUI();
+      renderPayDetails();
+      ragoStage.classList.remove('show');
+      cartModal.classList.add('open');
+    });
 
-    function openCart() {
-      document.getElementById('ragoStage').classList.remove('show');
-      setPayment(paymentMethod);
-      renderCart();
-      document.getElementById('cartModal').classList.add('open');
-    }
+    document.getElementById('closeCartBtn').addEventListener('click', () => {
+      cartModal.classList.remove('open');
+    });
 
-    function closeCart() {
-      document.getElementById('cartModal').classList.remove('open');
-    }
+    cartModal.addEventListener('click', (e) => {
+      if (e.target === cartModal) cartModal.classList.remove('open');
+    });
 
-    function setPayment(method) {
-      paymentMethod = method;
-      document.getElementById('pay-pm').classList.toggle('active', method === 'Pago Móvil');
-      document.getElementById('pay-bn').classList.toggle('active', method === 'Binance');
+    document.getElementById('deliveryZone').addEventListener('change', updateCartUI);
+    document.getElementById('bsRate').addEventListener('input', updateCartUI);
 
-      const box = document.getElementById('payDetails');
-      box.innerHTML = '';
-
-      const title = document.createElement('strong');
-      const desc = document.createElement('span');
-      const br = document.createElement('br');
-      const copyBtn = document.createElement('button');
-      copyBtn.type = 'button';
-      copyBtn.className = 'copy-mini-btn';
-
-      if (method === 'Pago Móvil') {
-        const { banco, telefono, cedula } = PAYMENT_CONFIG.pagoMovil;
-        const hasData = Boolean(banco || telefono || cedula);
-        currentCopyValue = [banco, telefono, cedula].filter(Boolean).join(' | ');
-        currentCopyLabel = 'Datos de Pago Móvil copiados';
-        title.textContent = 'Pago Móvil: ';
-        desc.textContent = hasData
-          ? `Banco: ${banco || '—'} • Tel: ${telefono || '—'} • CI/RIF: ${cedula || '—'}`
-          : 'Datos pendientes por configurar (en trámite bancario). Se coordinan al cerrar el pedido.';
-        copyBtn.textContent = '📋 Copiar datos';
-      } else {
-        const { idOrMail } = PAYMENT_CONFIG.binance;
-        currentCopyValue = idOrMail || '';
-        currentCopyLabel = 'ID de Binance copiado';
-        title.textContent = 'Binance (USDT): ';
-        desc.textContent = idOrMail
-          ? `ID / Correo: ${idOrMail}`
-          : 'Cuenta/ID pendiente por activar. Se coordina al cerrar el pedido.';
-        copyBtn.textContent = '📋 Copiar ID';
-      }
-
-      copyBtn.addEventListener('click', () => {
-        if (!currentCopyValue.trim()) {
-          showToast('Datos pendientes por configurar');
-          return;
-        }
-        if (navigator.clipboard && navigator.clipboard.writeText) {
-          navigator.clipboard.writeText(currentCopyValue)
-            .then(() => showToast(currentCopyLabel))
-            .catch(() => showToast('No se pudo copiar'));
-        }
+    document.querySelectorAll('.pay-balloon').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.pay-balloon').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        selectedPay = btn.dataset.pay;
+        renderPayDetails();
       });
-
-      box.appendChild(title);
-      box.appendChild(desc);
-      box.appendChild(br);
-      box.appendChild(copyBtn);
-    }
-
-    function renderCart() {
-      const container = document.getElementById('cartItems');
-      const delivery = parseFloat(document.getElementById('deliveryZone').value || '0');
-      const rateVal = parseFloat(document.getElementById('bsRate').value || '0');
-      container.innerHTML = '';
-
-      if (cart.length === 0) {
-        const emptyMsg = document.createElement('p');
-        emptyMsg.style.fontSize = '0.84rem';
-        emptyMsg.style.color = 'var(--muted)';
-        emptyMsg.textContent = 'Tu carrito está vacío. Agrega algún producto o camisa personalizada.';
-        container.appendChild(emptyMsg);
-        document.getElementById('cartTotal').textContent = '$0.00';
-        document.getElementById('cartTotalBs').textContent = '';
-        return;
-      }
-
-      const subtotal = cart.reduce((acc, item) => acc + item.price, 0);
-      const total = subtotal + delivery;
-
-      cart.forEach((item, idx) => {
-        const row = document.createElement('div');
-        row.className = 'cart-item';
-
-        const textSpan = document.createElement('span');
-        textSpan.textContent = `${item.name} — $${item.price}`;
-
-        const remBtn = document.createElement('button');
-        remBtn.type = 'button';
-        remBtn.className = 'close-btn';
-        remBtn.style.padding = '3px 9px';
-        remBtn.style.fontSize = '0.74rem';
-        remBtn.textContent = 'Quitar';
-        remBtn.addEventListener('click', () => {
-          cart.splice(idx, 1);
-          updateCartCount();
-          renderCart();
-        });
-
-        row.appendChild(textSpan);
-        row.appendChild(remBtn);
-        container.appendChild(row);
-      });
-
-      document.getElementById('cartTotal').textContent = `$${total.toFixed(2)} (Envío: $${delivery.toFixed(2)})`;
-      document.getElementById('cartTotalBs').textContent = rateVal > 0
-        ? `Ref. aprox: Bs ${(total * rateVal).toFixed(2)}`
-        : '';
-    }
+    });
 
     function buildOrderSummary() {
-      const zoneSelect = document.getElementById('deliveryZone');
-      const zoneText = zoneSelect.options[zoneSelect.selectedIndex].text;
+      const lines = cart.map(i => `• ${i.qty}x ${i.name} ($${(i.price * i.qty).toFixed(2)})`).join('\n');
+      const zoneText = document.getElementById('deliveryZone').selectedOptions[0].text;
       const slotText = document.getElementById('deliverySlot').value;
-      const delivery = parseFloat(zoneSelect.value || '0');
-      const subtotal = cart.reduce((acc, item) => acc + item.price, 0);
-      const total = subtotal + delivery;
-      const rateVal = parseFloat(document.getElementById('bsRate').value || '0');
-      const bsLine = rateVal > 0 ? `\nRef. Bs: ${(total * rateVal).toFixed(2)}` : '';
-      const list = cart.map((i) => `• ${i.name} ($${i.price})`).join('\n');
-      return `Hola ZaDkiel! Quiero realizar este pedido en Maturín:\n${list}\nZona: ${zoneText}\nHorario: ${slotText}\nPago: ${paymentMethod}\nTotal: $${total.toFixed(2)}${bsLine}`;
+      const total = cartTotalEl.textContent;
+      const totalBs = cartTotalBsEl.textContent ? ` (${cartTotalBsEl.textContent})` : '';
+      return `¡Hola ZaDkiel! Quiero confirmar este pedido en Maturín:\n${lines}\nEntrega: ${zoneText}\nHorario: ${slotText}\nPago: ${selectedPay}\nTotal: ${total}${totalBs}`;
     }
-
-    function sendVia(channel) {
-      const text = buildOrderSummary();
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(text).catch(() => {});
-      }
-      if (channel === 'whatsapp') {
-        window.open('https://wa.me/?text=' + encodeURIComponent(text), '_blank');
-      } else if (channel === 'instagram') {
-        showToast('Resumen copiado. Pégalo en el DM de Instagram');
-        window.open('https://www.instagram.com/', '_blank');
-      } else if (channel === 'facebook') {
-        showToast('Resumen copiado. Pégalo en Facebook Messenger');
-        window.open('https://www.facebook.com/messages/', '_blank');
-      }
-    }
-
-    document.querySelectorAll('.pill-btn').forEach((btn) => {
-      btn.addEventListener('click', () => selectCategory(btn.dataset.cat));
-    });
-
-    document.querySelectorAll('.cat-card').forEach((card) => {
-      card.addEventListener('click', () => selectCategory(card.dataset.cat));
-      card.addEventListener('mouseenter', () => reactToCategory(card.dataset.cat));
-    });
-
-    ['shirtFit', 'shirtSize', 'shirtColor'].forEach((id) => {
-      document.getElementById(id).addEventListener('change', () => sayPhrase('estilo'));
-    });
-    document.getElementById('shirtIdea').addEventListener('focus', () => sayPhrase('estilo'));
-    document.getElementById('addCustomShirtBtn').addEventListener('click', addCustomShirt);
-
-    document.getElementById('buddyAvatar').addEventListener('click', () => sayPhrase(lastCategoryContext));
-    document.getElementById('buddyQuote').addEventListener('click', () => sayPhrase(lastCategoryContext));
-
-    document.getElementById('openCartBtn').addEventListener('click', openCart);
-    document.getElementById('closeCartBtn').addEventListener('click', closeCart);
-    document.getElementById('deliveryZone').addEventListener('change', renderCart);
-    document.getElementById('bsRate').addEventListener('input', renderCart);
-
-    document.querySelectorAll('.pay-balloon').forEach((balloon) => {
-      balloon.addEventListener('click', () => setPayment(balloon.dataset.pay));
-    });
 
     document.getElementById('checkoutBtn').addEventListener('click', () => {
       if (cart.length === 0) {
-        showToast('Primero agrega un producto al pedido');
+        showToast('Agrega al menos un producto primero');
         return;
       }
-      document.getElementById('ragoStage').classList.add('show');
+      ragoStage.classList.add('show');
+      setBuddy('¡Rago aprobó el pedido! Elige WhatsApp, Instagram o Facebook.');
     });
 
-    document.querySelectorAll('.social-btn').forEach((btn) => {
-      btn.addEventListener('click', () => sendVia(btn.dataset.channel));
+    document.querySelectorAll('.social-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const channel = btn.dataset.channel;
+        const summary = buildOrderSummary();
+        navigator.clipboard?.writeText(summary).catch(() => {});
+
+        if (channel === 'whatsapp') {
+          const url = `https://wa.me/${PAYMENT_CONFIG.whatsappPhone}?text=${encodeURIComponent(summary)}`;
+          window.open(url, '_blank', 'noopener,noreferrer');
+        } else if (channel === 'instagram') {
+          showToast('Resumen copiado. Pégalo en Instagram DM.');
+          window.open('https://www.instagram.com/', '_blank', 'noopener,noreferrer');
+        } else if (channel === 'facebook') {
+          showToast('Resumen copiado. Pégalo en Messenger.');
+          window.open('https://www.facebook.com/', '_blank', 'noopener,noreferrer');
+        }
+      });
     });
+
+    const ragoQuotes = [
+      'Rago aprueba el estilo morado/negro con toque verde neón.',
+      'Entregas en Maturín de 8:00 a. m. a 8:00 p. m., todos los días.',
+      'Pago Móvil o Binance: rápido y directo sin vueltas.',
+      '¿Listo para estrenar drop en ZaDkiel?'
+    ];
+    let quoteIdx = 0;
+    function nextQuote() {
+      quoteIdx = (quoteIdx + 1) % ragoQuotes.length;
+      setBuddy(ragoQuotes[quoteIdx]);
+    }
+    document.getElementById('buddyAvatar').addEventListener('click', nextQuote);
+    document.getElementById('buddyQuote').addEventListener('click', nextQuote);
 
     renderProducts();
-    setPayment('Pago Móvil');
+    updateCartUI();
+    renderPayDetails();
   </script>
 </body>
 </html>
